@@ -43,3 +43,7 @@ type public_adsprpcd_file, file_type;
 
 # Power-Libperfmgr
 type pps_socket, file_type;
+
+# KernelSpace Battery Saver
+type sysfs_battery_saver, fs_type, sysfs_type;
+
