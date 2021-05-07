@@ -22,6 +22,3 @@ ro.elixir.device=r5x
 ro.elixir.maintainer=Om_Patel
 ro.elixir.maintainer.username=Takumi021
 ro.elixir.group.url=t.me/Elixir_Discussion
-
-# Graphics
-debug.hwui.renderer=skiavk
