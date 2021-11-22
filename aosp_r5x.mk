@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common PixelExperience stuff
+# Inherit some common Elixir stuff
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from r5x device
@@ -43,3 +43,6 @@ TARGET_VENDOR_DEVICE_NAME := r5x
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="r5x" \
     PRIVATE_BUILD_DESC="trinket-user 10 QKQ1.200209.002 release-keys"
+
+# Maintainer
+Elixir_MAINTAINER := Om Patel (Takumi)
