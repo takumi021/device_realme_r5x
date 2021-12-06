@@ -42,7 +42,12 @@ TARGET_VENDOR_DEVICE_NAME := r5x
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="r5x" \
-    PRIVATE_BUILD_DESC="trinket-user 10 QKQ1.200209.002 release-keys"
+    PRIVATE_BUILD_DESC="raven-user 12 SD1A.210817.036 7805805 release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/raven/raven:12/SD1A.210817.036/7805805:user/release-keys
+
+BUILD_FINGERPRINT := "google/raven/raven:12/SD1A.210817.036/7805805:user/release-keys"
 
 # Maintainer
 Elixir_MAINTAINER := Om(Takumi)
