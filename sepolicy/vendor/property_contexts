@@ -17,6 +17,9 @@ oppo.fpc.sw.version                     u:object_r:oppo_fingerprint_prop:s0
 # GSM prop
 gsm.operator.numeric                    u:object_r:radio_prop:s0
 
+# Fix Baseband
+gsm.version.baseband               u:object_r:baseband_prop:s0
+
 # Camera
 oppo.camera.                            u:object_r:vendor_camera_prop:s0
 persist.front.skipdisplay.enable        u:object_r:vendor_camera_prop:s0

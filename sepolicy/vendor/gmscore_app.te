@@ -19,5 +19,5 @@ allow gmscore_app apexd_prop:file { map };
 allow gmscore_app apk_verity_prop:file { map };
 
 dontaudit gmscore_app hal_memtrack_hwservice:hwservice_manager find;
-
+dontaudit gmscore_app baseband_prop:file read;
 dontaudit gmscore_app hal_memtrack_hwservice:binder {call};
