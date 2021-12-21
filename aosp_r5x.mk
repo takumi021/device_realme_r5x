@@ -50,7 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 BUILD_FINGERPRINT := "google/raven/raven:12/SD1A.210817.036/7805805:user/release-keys"
 
 # Maintainer
-Elixir_MAINTAINER := Om(Takumi)
+Elixir_MAINTAINER := Om_Patel
 IS_PHONE := true
 CUSTOM_BUILD_TYPE := OFFICIAL
 TARGET_INCLUDE_LIVE_WALLPAPERS= false
