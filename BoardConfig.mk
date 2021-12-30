@@ -242,3 +242,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
 -include vendor/realme/r5x/BoardConfigVendor.mk
+
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
