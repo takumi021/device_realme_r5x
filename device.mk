@@ -684,3 +684,6 @@ $(call inherit-product, vendor/realme/r5x/r5x-vendor.mk)
 # Board
 TARGET_BOARD_PLATFORM := trinket
 PRODUCT_USES_QCOM_HARDWARE := true
+
+# RealmeDirac
+$(call inherit-product, packages/apps/RealmeDirac/dirac.mk)
