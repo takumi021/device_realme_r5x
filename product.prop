@@ -16,4 +16,9 @@ persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1 
 
 # Maintainer
-org.elixir.device=r5x
+org.elixir.device.name=Realme 5 Series
+ro.elixir.device.name=Realme 5 Series
+ro.elixir.device=r5x
+ro.elixir.maintainer=Om_Patel
+ro.elixir.maintainer.username=Takumi021
+ro.elixir.group.url=t.me/Elixir_Discussion
