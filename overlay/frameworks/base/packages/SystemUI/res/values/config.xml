@@ -51,5 +51,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
 
+    <!-- Show battery icon in the QS Panel instead of in the header -->
+    <bool name="config_batteryInQSPanel">true</bool>
 
 </resources>
