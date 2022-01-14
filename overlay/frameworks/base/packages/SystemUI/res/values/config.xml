@@ -46,4 +46,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">true</bool>
 
+    <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
+         does not work well, particularly with noisy touchscreens. Note that disabling it may
+         increase the rate of unintentional unlocks. -->
+    <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+
+
 </resources>
