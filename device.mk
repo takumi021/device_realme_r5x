@@ -687,3 +687,6 @@ $(call inherit-product, vendor/realme/r5x/r5x-vendor.mk)
 # Remove Unwanted Packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# RealmeDirac
+$(call inherit-product, $(LOCAL_PATH)/RealmeDirac/dirac.mk)
