@@ -39,6 +39,9 @@ PRODUCT_SOONG_NAMESPACES += \
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_props.mk
 
+# Parts
+$(call inherit-product, $(LOCAL_PATH)/app/RealmeParts/parts.mk)
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
