@@ -264,3 +264,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 debug.sdm.support_writeback=0
+ro.vendor.perf.scroll_opt=true
