@@ -95,3 +95,7 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 
 # MemPlus Prefetcher
 persist.vendor.sys.memplus.enable=false
+
+# QTI Mem Optimisation
+ro.vendor.qti.sys.fw.bg_apps_limit=30
+ro.vendor.qti.sys.fw.bservice_limit=60
