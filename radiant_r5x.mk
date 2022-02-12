@@ -19,8 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common Elixir stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Radiant stuff
+$(call inherit-product, vendor/radiant/config/common_full_phone.mk)
 
 # Inherit from r5x device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -32,7 +32,7 @@ TARGET_INCLUDE_LIVE_WALLPAPERS := false
 PRODUCT_BRAND := Realme
 PRODUCT_DEVICE := r5x
 PRODUCT_MANUFACTURER := Realme
-PRODUCT_NAME := aosp_r5x
+PRODUCT_NAME := radiant_r5x
 PRODUCT_MODEL := Realme 5 Series
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
@@ -46,11 +46,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 BUILD_FINGERPRINT := "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys"
-
-# Maintainer
-Elixir_MAINTAINER := Om_Patel
-IS_PHONE := true
-CUSTOM_BUILD_TYPE := OFFICIAL
-TARGET_INCLUDE_LIVE_WALLPAPERS= false
-TARGET_INCLUDE_STOCK_ACORE := false
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
