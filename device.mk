@@ -147,10 +147,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-# Dirac
-#PRODUCT_PACKAGES += \
-    KharaMeDirac
-
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
