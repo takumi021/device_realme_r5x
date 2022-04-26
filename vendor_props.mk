@@ -134,6 +134,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1
     persist.sys.sf.color_saturation=1.1 \
     persist.sys.sf.native_mode=0 \
+    debug.hwui.renderer=skiagl \
+    debug.renderengine.backend=skiaglthreaded \
+    renderthread.skia.reduceopstasksplitting=true
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
