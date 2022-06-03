@@ -8,9 +8,6 @@ ro.sys.fw.dex2oat_thread_count=8
 ro.config.low_ram=false
 ro.lmk.log_stats=true
 
-# Graphics
-debug.hwui.renderer=skiavk
-
 # Aux Expose
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera,org.pixelexperience.faceunlock
