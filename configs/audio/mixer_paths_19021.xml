@@ -344,9 +344,9 @@
     <!-- Volume controls -->
     <ctl name="WSA_RX0 Digital Volume" value="84" />
     <ctl name="WSA_RX1 Digital Volume" value="84" />
-    <ctl name="RX_RX0 Digital Volume" value="84" />
-    <ctl name="RX_RX1 Digital Volume" value="84" />
-    <ctl name="RX_RX2 Digital Volume" value="84" />
+    <ctl name="RX_RX0 Digital Volume" value="100" />
+    <ctl name="RX_RX1 Digital Volume" value="100" />
+    <ctl name="RX_RX2 Digital Volume" value="100" />
     <ctl name="HPHL Volume" value="20" />
     <ctl name="HPHR Volume" value="20" />
     <ctl name="EAR SPKR PA Gain" value="G_DEFAULT" />
@@ -2149,8 +2149,8 @@
         <ctl name="AUX_RDAC Switch" value="1" />
         <ctl name="Ext_Speaker_Amp_spkmode" value="On" />
         <ctl name="Ext_Receiver_Amp_spkmode" value="On" />
-        <ctl name="RX_RX0 Digital Volume" value="78" />
-        <ctl name="RX_RX2 Digital Volume" value="78" />
+        <ctl name="RX_RX0 Digital Volume" value="95" />
+        <ctl name="RX_RX2 Digital Volume" value="95" />
         <!-- #ifdef VENDOR_EDIT -->
         <!-- Kaijia.Lin@PSW.MM.AudioDriver.HAL, 2019/08/21, Add for SIA VDD enable -->
         <ctl name="SpkrMonoL Sia81xx Power" value="On" />

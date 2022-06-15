@@ -351,9 +351,9 @@
     <!-- Volume controls -->
     <ctl name="WSA_RX0 Digital Volume" value="84" />
     <ctl name="WSA_RX1 Digital Volume" value="84" />
-    <ctl name="RX_RX0 Digital Volume" value="84" />
-    <ctl name="RX_RX1 Digital Volume" value="84" />
-    <ctl name="RX_RX2 Digital Volume" value="84" />
+    <ctl name="RX_RX0 Digital Volume" value="100" />
+    <ctl name="RX_RX1 Digital Volume" value="100" />
+    <ctl name="RX_RX2 Digital Volume" value="100" />
     <ctl name="HPHL Volume" value="20" />
     <ctl name="HPHR Volume" value="20" />
     <ctl name="EAR SPKR PA Gain" value="G_DEFAULT" />
@@ -2592,7 +2592,7 @@
         <ctl name="RX HPH Mode" value="CLS_AB" />
         <ctl name="AUX_RDAC Switch" value="1" />
         <!-- Yue.Li@ODM_WT.MM.Audiodriver.HAL.1919162, 2020/03/27, Modify for audio -->
-        <ctl name="RX_RX2 Digital Volume" value="76" />
+        <ctl name="RX_RX2 Digital Volume" value="95" />
     </path>
     <!-- endif ODM_WT_EDIT -->
 
