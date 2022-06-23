@@ -2759,15 +2759,15 @@ vendor/lib64/hw/libets_teeclient_v2.so
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs
 
 # Fingerprint firmware
-vendor/firmware/f_1511.b00
-vendor/firmware/f_1511.b01
-vendor/firmware/f_1511.b02
-vendor/firmware/f_1511.b03
-vendor/firmware/f_1511.b04
-vendor/firmware/f_1511.b05
-vendor/firmware/f_1511.b06
-vendor/firmware/f_1511.b07
-vendor/firmware/f_1511.mdt
+vendor/euclid/version.19631/vendor/firmware/f_1511.b00:vendor/firmware/f_1511.b00
+vendor/euclid/version.19631/vendor/firmware/f_1511.b01:vendor/firmware/f_1511.b01
+vendor/euclid/version.19631/vendor/firmware/f_1511.b02:vendor/firmware/f_1511.b02
+vendor/euclid/version.19631/vendor/firmware/f_1511.b03:vendor/firmware/f_1511.b03
+vendor/euclid/version.19631/vendor/firmware/f_1511.b04:vendor/firmware/f_1511.b04
+vendor/euclid/version.19631/vendor/firmware/f_1511.b05:vendor/firmware/f_1511.b05
+vendor/euclid/version.19631/vendor/firmware/f_1511.b06:vendor/firmware/f_1511.b06
+vendor/euclid/version.19631/vendor/firmware/f_1511.b07:vendor/firmware/f_1511.b07
+vendor/euclid/version.19631/vendor/firmware/f_1511.mdt:vendor/firmware/f_1511.mdt
 
 # Fingerprint firmware Egis
 vendor/firmware/egista.b00
