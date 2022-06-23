@@ -202,8 +202,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
-# Healthd
+# Health
 PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
 
 PRODUCT_COPY_FILES += \
