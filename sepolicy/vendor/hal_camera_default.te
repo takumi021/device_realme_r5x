@@ -12,6 +12,8 @@ allow hal_camera_default proc_devinfo:file { read open };
 allow hal_camera_default sysfs_hal_camera_default:file { read open };
 allow hal_camera_default sysfs_camera:file { read open };
 
+allow hal_camera_default public_adsprpcd_file:file r_file_perms;
+
 get_prop(hal_camera_default, vendor_camera_prop)
 get_prop(hal_camera_default, oppo_debug_prop)
 get_prop(hal_camera_default, bootanim_system_prop)

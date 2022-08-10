@@ -15,6 +15,8 @@ allow init hwservicemanager:binder { transfer };
 allow init init:capability2 { block_suspend };
 allow init init:capability2 { wake_alarm };
 allow init sysfs_usb_supply:file { read open };
+allow init adsprpcd_file:file { mounton };
+
 allow init vfat:dir { search };
 
 r_dir_file(init, proc_oppo_fp);
