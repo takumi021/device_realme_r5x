@@ -289,9 +289,8 @@ PRODUCT_COPY_FILES += \
 
 # Netutils
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
+    android.system.net.netd@1.1.vendor \
     libandroid_net \
-    netutils-wrapper-1.0 \
     offload.o
 
 # OMX
@@ -650,8 +649,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.4.vendor \
     android.hidl.allocator@1.0.vendor \
     android.hidl.memory.block@1.0.vendor \
-    android.system.net.netd@1.0.vendor \
-    android.system.net.netd@1.1.vendor \
     android.system.wifi.keystore@1.0.vendor \
     libadf.vendor \
     libstdc++.vendor \
