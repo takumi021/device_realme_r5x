@@ -462,4 +462,10 @@
            <item>0</item> <!-- COLOR_MODE_NATURAL -->
            <item>1</item> <!-- COLOR_MODE_BOOSTED -->
                             </integer-array>
+
+    <!-- Flag indicating whether the surface flinger is inefficient
+         at performing a blur.  Used by parts of the UI to turn off
+         the blur effect where it isn't worth the performance hit.
+         As of Honeycomb, blurring is not supported anymore. -->
+    <bool name="config_sf_slowBlur">false</bool>
 </resources>
