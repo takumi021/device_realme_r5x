@@ -11,6 +11,7 @@ allow hal_camera_default proc_devinfo:dir { search };
 allow hal_camera_default proc_devinfo:file { read open };
 allow hal_camera_default sysfs_hal_camera_default:file { read open };
 allow hal_camera_default sysfs_camera:file { read open };
+allow hal_camera_default vendor_video_prop:file { getattr  map  open  read };
 
 get_prop(hal_camera_default, vendor_camera_prop)
 get_prop(hal_camera_default, oppo_debug_prop)
