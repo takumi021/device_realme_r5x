@@ -20,9 +20,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys-intf/display \
     vendor/qcom/opensource/wfd-commonsys
 
-# Vendor properties
--include $(LOCAL_PATH)/vendor_props.mk
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
