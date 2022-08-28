@@ -18,6 +18,7 @@ allow init sysfs_usb_supply:file { read open };
 allow init adsprpcd_file:file { mounton };
 allow init vfat:dir { search };
 allow init egis_device:chr_file { ioctl };
+allow init proc_oppoversion:file { read open getattr };
 
 # Allow init to access /proc/fp_id
 allow init proc_oppo_fp:file rw_file_perms;
