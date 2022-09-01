@@ -3117,6 +3117,9 @@ vendor/lib64/libskewknob.so|bc76a05d7ea41c4f35b1dba47e9c66321654023e
 vendor/lib64/vendor.qti.hardware.iop@1.0.so|7cf6226b395affc0a7c887d406209e37c9a30acb
 vendor/lib64/vendor.qti.hardware.iop@2.0.so|b0fb916690a472a9c41ed8a9e4639820e7f83a29
 
+# NFC
+vendor/lib/libpn553_fw.so
+
 # NFC (Configs)
 vendor/etc/sn100u_bootup.pnscr
 vendor/etc/sn100u_ese_disableIso.pnscr
