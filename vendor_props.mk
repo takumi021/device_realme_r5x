@@ -92,7 +92,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.expose.aux=1 \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    vendor.camera.not.cts.apk=1 \
+    vendor.camera.not.ctsverify.apk=1
 
 # Crypto
 PRODUCT_PROPERTY_OVERRIDES += \
