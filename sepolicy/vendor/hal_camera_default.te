@@ -11,6 +11,8 @@ allow hal_camera_default proc_devinfo:dir { search };
 allow hal_camera_default proc_devinfo:file { read open };
 allow hal_camera_default sysfs_hal_camera_default:file { read open };
 allow hal_camera_default sysfs_camera:file { read open };
+allow hal_camera_default sysfs:file { open  read };
+allow hal_camera_default default_prop:file { getattr map };
 
 allow hal_camera_default public_adsprpcd_file:file r_file_perms;
 
