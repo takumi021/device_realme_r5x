@@ -2752,16 +2752,20 @@ vendor/lib64/android.frameworks.fingerprintservice@1.0.so
 vendor/lib64/libalipay_factory.so
 vendor/lib64/libhypnusclient.so
 vendor/lib64/librpmbengclient.so
-vendor/lib64/libRbsFlow.so
-vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/hw/libets_teeclient_v2.so
 
-# Fingerprint - from moto_troika 9/PSB29.105-27/fd362:user/release-keys
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs|ad879e7ed06f50c804e79fb9312614c4fdef49e5
+# Fingerprint - from motorola/troika_retail/troika_sprout:11/RSBS31.Q1-48-36-20/3e578:user/release-keys
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs|783ae0d702afeff749629a1fc7c197761dfa5e14
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-rbs.rc|c6ed1177bc2d25c6691bf3608c887560ed8c747e
+vendor/lib/hw/vendor.egistec.hardware.fingerprint@4.0-impl.so|44fb1f6325a16eace7c8711c05ed0450ed32ac9f
+vendor/lib/vendor.egistec.hardware.fingerprint@4.0.so|40cc728af114da362d50ef074f4badd69123175e
+vendor/lib64/hw/vendor.egistec.hardware.fingerprint@4.0-impl.so|e4a9f8171356db436cbb159f29066da0fa4f511f
+vendor/lib64/libRbsFlow.so|85ae123928d5a2de43809a874947f4bf20c382a4
+vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so|0c27b978cbbd4334c57f13eea934ac050d371daf
 
 # Fingerprint firmware
 vendor/firmware/f_1511.b00
