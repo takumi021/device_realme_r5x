@@ -6,10 +6,13 @@ allow hal_fingerprint_default goodix_device:chr_file rw_file_perms;
 allow hal_fingerprint_default egis_device:chr_file rw_file_perms;
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 
+allow hal_fingerprint_default fingerprint_vendor_data_file:file create_file_perms;
+allow hal_fingerprint_default fingerprint_vendor_data_file:dir create_dir_perms;
+allow hal_fingerprint_default sysfs_rbs:file rw_file_perms;
+
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 
 allow hal_fingerprint_default proc_oppo_fp:file r_file_perms;
-
 allow hal_fingerprint_default sysfs_hal_fingerprint_default:file { write open read };
 allow hal_fingerprint_default uhid_device:chr_file { write open ioctl };
 allow hal_fingerprint_default mnt_vendor_file:dir { getattr search };
