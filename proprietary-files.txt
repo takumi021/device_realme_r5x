@@ -2762,10 +2762,12 @@ vendor/lib64/hw/libets_teeclient_v2.so
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs|783ae0d702afeff749629a1fc7c197761dfa5e14
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-rbs.rc|c6ed1177bc2d25c6691bf3608c887560ed8c747e
 vendor/lib/hw/vendor.egistec.hardware.fingerprint@4.0-impl.so|44fb1f6325a16eace7c8711c05ed0450ed32ac9f
+vendor/lib/libMcClient.so|0c5866f529bab5b4c25b3fdae448500095c25d56
 vendor/lib/vendor.egistec.hardware.fingerprint@4.0.so|40cc728af114da362d50ef074f4badd69123175e
 vendor/lib64/hw/vendor.egistec.hardware.fingerprint@4.0-impl.so|e4a9f8171356db436cbb159f29066da0fa4f511f
-vendor/lib64/libRbsFlow.so|85ae123928d5a2de43809a874947f4bf20c382a4
-vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so|0c27b978cbbd4334c57f13eea934ac050d371daf
+vendor/lib64/libMcClient.so|29ed70939392c03f668da0fb67f4a38770df7d76
+vendor/lib64/libRbsFlow.so|4510a52d7e06559fa02bf22b87bd10ab79d98cdc
+vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so|e2e3097ae14b3cc2a8be5f5058d98b0ec471a094
 
 # Fingerprint firmware
 vendor/firmware/f_1511.b00
