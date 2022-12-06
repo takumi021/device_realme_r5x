@@ -577,7 +577,7 @@ PRODUCT_PACKAGES += \
     android.hardware.cas@1.0.vendor \
     android.hardware.cas@1.1.vendor \
     android.hardware.cas@1.2.vendor \
-    android.hardware.common-V1-ndk_platform.vendor \
+    android.hardware.common-V1-ndk.vendor \
     android.hardware.confirmationui@1.0.vendor \
     android.hardware.contexthub@1.0.vendor \
     android.hardware.contexthub@1.1.vendor \
@@ -589,7 +589,7 @@ PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.1.vendor \
     android.hardware.fastboot@1.0.vendor \
     android.hardware.gatekeeper@1.0.vendor \
-    android.hardware.graphics.common-V1-ndk_platform.vendor \
+    android.hardware.graphics.common-V1-ndk.vendor \
     android.hardware.graphics.composer@2.1.vendor \
     android.hardware.graphics.composer@2.2.vendor \
     android.hardware.graphics.composer@2.3.vendor \
