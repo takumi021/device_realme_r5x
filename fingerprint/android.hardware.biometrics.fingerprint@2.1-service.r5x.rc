@@ -1,3 +1,15 @@
+on post-fs-data
+    chmod 0660 /dev/esfp0
+    chown system system /dev/esfp0
+    chown system system /sys/devices/platform/egis_input/navigation_event
+    chown system system /sys/devices/platform/egis_input/navigation_enable
+    chmod 0666 /sys/devices/platform/egis_input/navigation_event
+    chmod 0666 /sys/devices/platform/egis_input/navigation_enable
+
+    mkdir /data/vendor/fingerprint 0770 system system
+    mkdir /mnt/vendor/persist/fingerprint 0770 system system
+    mkdir /data/vendor/egis 0770 system system
+    
 service fps_hal.r5x /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.r5x
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
@@ -6,15 +18,7 @@ service fps_hal.r5x /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-s
     user system
     group system input uhid
 
-service fps_hal /vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
-    # "class hal" causes a race condition on some devices due to files created
-    # in /data. As a workaround, postpone startup until later in boot once
-    # /data is mounted.
-    class late_start
-    user system
-    group system input uhid
-
-service ets_hal.rbs /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs
+service ets_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
@@ -23,17 +27,7 @@ service ets_hal.rbs /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-s
     group system input uhid
     disabled
 
-service ets_hal /vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service-rbs
-    # "class hal" causes a race condition on some devices due to files created
-    # in /data. As a workaround, postpone startup until later in boot once
-    # /data is mounted.
-    class late_start
-    user system
-    group system input uhid
-    disabled
-
-on property:persist.vendor.fingerprint.fp_id=E_520 && property:init.svc.fps_hal=running && property:init.svc.fps_hal.r5x=running
+on property:persist.vendor.fingerprint.fp_id=E_520
     stop fps_hal
     stop fps_hal.r5x
     start ets_hal
-    start ets_hal.rbs
