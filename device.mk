@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# RealmeDirac
+$(call inherit-product, $(LOCAL_PATH)/app/RealmeDirac/dirac.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-#PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
-RELAX_USES_LIBRARY_CHECK := true
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Soong namespaces
@@ -104,7 +104,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0.vendor \
     libstdc++.vendor \
-    libdng_sdk.vendor \
+    libdng_sdk.vendor
+
+PRODUCT_PACKAGES += \   
     GCamGOPrebuilt
 
 PRODUCT_COPY_FILES += \
@@ -181,9 +183,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio \
     qcom.fmradio.xml
-
-#PRODUCT_BOOT_JARS += \
-    qcom.fmradio
 
 # Freeform Windows
 PRODUCT_COPY_FILES += \
@@ -285,15 +284,11 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-	$(LOCAL_PATH)/configs/media/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml \
-	$(LOCAL_PATH)/configs/media/media_codecs_ffmpeg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_ffmpeg.xml \
-	$(LOCAL_PATH)/configs/media/media_codecs_oppo_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_oppo_performance.xml \
-	$(LOCAL_PATH)/configs/media/media_codecs_oppo_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_oppo_video.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-	$(LOCAL_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
-	$(LOCAL_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
-	$(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
     $(LOCAL_PATH)/configs/media/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
@@ -358,10 +353,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.r5x-libperfmgr \
     android.hardware.power.stats@1.0-service.pixel \
     libqti-perfd-client
-    
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perf/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
- 
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
@@ -388,7 +383,6 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
-    android.hardware.radio@1.2 \
     android.hardware.radio.config@1.0 \
     android.hardware.secure_element@1.0 \
     rild \
@@ -396,7 +390,7 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full
-    
+
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
@@ -414,7 +408,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
-#PRODUCT_BOOT_JARS += \
+PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_COPY_FILES += \
@@ -422,9 +416,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
-
-# RealmeDirac
-$(call inherit-product, $(LOCAL_PATH)/app/RealmeDirac/dirac.mk)
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -485,7 +476,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwpa_client \
-    TetheringConfigOverlay \
     WifiOverlay \
     wpa_cli \
     wpa_supplicant \
@@ -521,157 +511,72 @@ PRODUCT_PACKAGES += \
     android.frameworks.automotive.display@1.0.vendor \
     android.frameworks.cameraservice.common@2.0.vendor \
     android.frameworks.cameraservice.device@2.0.vendor \
-    android.frameworks.cameraservice.service@2.0.vendor \
     android.frameworks.cameraservice.service@2.1.vendor \
     android.frameworks.displayservice@1.0.vendor \
     android.frameworks.schedulerservice@1.0.vendor \
     android.frameworks.serservice@1.0.vendor \
     android.frameworks.stats@1.0.vendor \
     android.hardware.atrace@1.0.vendor \
-    android.hardware.audio.common@4.0.vendor \
-    android.hardware.audio.common@5.0.vendor \
     android.hardware.audio.common@6.0.vendor \
-    android.hardware.audio.effect@2.0.vendor \
-    android.hardware.audio.effect@4.0.vendor \
-    android.hardware.audio.effect@5.0.vendor \
     android.hardware.audio.effect@6.0.vendor \
-    android.hardware.audio@2.0.vendor \
-    android.hardware.audio@4.0.vendor \
-    android.hardware.audio@5.0.vendor \
     android.hardware.audio@6.0.vendor \
     android.hardware.authsecret@1.0.vendor \
-    android.hardware.automotive.audiocontrol@1.0.vendor \
-    android.hardware.automotive.audiocontrol@2.0.vendor \
-    android.hardware.automotive.can@1.0.vendor \
-    android.hardware.automotive.evs@1.0.vendor \
-    android.hardware.automotive.evs@1.1.vendor \
-    android.hardware.automotive.sv@1.0.vendor \
-    android.hardware.automotive.vehicle@2.0.vendor \
     android.hardware.biometrics.face@1.0.vendor \
     android.hardware.biometrics.fingerprint@2.1.vendor \
-    android.hardware.biometrics.fingerprint@2.2.vendor \
     android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth.audio@2.0.vendor \
-    android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.1.vendor \
-    android.hardware.boot@1.0.vendor \
     android.hardware.boot@1.1.vendor \
-    android.hardware.broadcastradio@1.0.vendor \
     android.hardware.broadcastradio@1.1.vendor \
     android.hardware.broadcastradio@2.0.vendor \
     android.hardware.camera.common@1.0.vendor \
     android.hardware.camera.device@1.0.vendor \
-    android.hardware.camera.device@3.2.vendor \
-    android.hardware.camera.device@3.3.vendor \
-    android.hardware.camera.device@3.4.vendor \
-    android.hardware.camera.device@3.5.vendor \
     android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.metadata@3.2.vendor \
-    android.hardware.camera.metadata@3.3.vendor \
-    android.hardware.camera.metadata@3.4.vendor \
     android.hardware.camera.metadata@3.5.vendor \
-    android.hardware.camera.provider@2.4.vendor \
-    android.hardware.camera.provider@2.5.vendor \
     android.hardware.camera.provider@2.6.vendor \
     android.hardware.cas.native@1.0.vendor \
-    android.hardware.cas@1.0.vendor \
-    android.hardware.cas@1.1.vendor \
     android.hardware.cas@1.2.vendor \
     android.hardware.common-V1-ndk.vendor \
     android.hardware.confirmationui@1.0.vendor \
-    android.hardware.contexthub@1.0.vendor \
     android.hardware.contexthub@1.1.vendor \
-    android.hardware.drm@1.0.vendor \
-    android.hardware.drm@1.1.vendor \
-    android.hardware.drm@1.2.vendor \
-    android.hardware.drm@1.3.vendor \
+    android.hardware.drm@1.4.vendor \
     android.hardware.dumpstate@1.0.vendor \
     android.hardware.dumpstate@1.1.vendor \
     android.hardware.fastboot@1.0.vendor \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.graphics.common-V1-ndk.vendor \
-    android.hardware.graphics.composer@2.1.vendor \
-    android.hardware.graphics.composer@2.2.vendor \
-    android.hardware.graphics.composer@2.3.vendor \
     android.hardware.graphics.composer@2.4.vendor \
     android.hardware.health.storage@1.0.vendor \
-    android.hardware.health@1.0.vendor \
-    android.hardware.health@2.0.vendor \
     android.hardware.health@2.1.vendor \
     android.hardware.input.classifier@1.0.vendor \
     android.hardware.input.common@1.0.vendor \
     android.hardware.ir@1.0.vendor \
-    android.hardware.keymaster@3.0.vendor \
-    android.hardware.keymaster@4.0.vendor \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.light@2.0.vendor \
     android.hardware.media.bufferpool@1.0.vendor \
     android.hardware.media.c2@1.0.vendor \
     android.hardware.media.c2@1.1.vendor \
-    android.hardware.neuralnetworks@1.0.vendor \
-    android.hardware.neuralnetworks@1.1.vendor \
-    android.hardware.neuralnetworks@1.2.vendor \
     android.hardware.neuralnetworks@1.3.vendor \
-    android.hardware.nfc@1.0.vendor \
-    android.hardware.nfc@1.1.vendor \
     android.hardware.nfc@1.2.vendor \
     android.hardware.oemlock@1.0.vendor \
     android.hardware.power.stats@1.0.vendor \
-    android.hardware.power@1.0.vendor \
-    android.hardware.power@1.1.vendor \
-    android.hardware.power@1.2.vendor \
     android.hardware.power@1.3.vendor \
-    android.hardware.radio.config@1.0.vendor \
-    android.hardware.radio.config@1.1.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.radio@1.0.vendor \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio@1.2.vendor \
-    android.hardware.radio@1.3.vendor \
-    android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
-    android.hardware.secure_element@1.0.vendor \
-    android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.2.vendor \
-    android.hardware.sers@1.0.vendor \
-    android.hardware.sers@2.0.vendor \
     android.hardware.sers@2.1.vendor \
-    android.hardwareundtrigger@2.1.vendor \
-    android.hardwareundtrigger@2.2.vendor \
     android.hardwareundtrigger@2.3.vendor \
-    android.hardware.tetheroffload.config@1.0.vendor \
     android.hardware.tetheroffload.control@1.0.vendor \
-    android.hardware.thermal@1.0.vendor \
-    android.hardware.thermal@1.1.vendor \
     android.hardware.thermal@2.0.vendor \
-    android.hardware.tv.cec@1.0.vendor \
-    android.hardware.tv.cec@2.0.vendor \
-    android.hardware.tv.input@1.0.vendor \
-    android.hardware.tv.tuner@1.0.vendor \
-    android.hardware.usb.gadget@1.0.vendor \
     android.hardware.usb.gadget@1.1.vendor \
-    android.hardware.usb@1.0.vendor \
-    android.hardware.usb@1.1.vendor \
     android.hardware.usb@1.2.vendor \
-    android.hardware.vibrator@1.0.vendor \
-    android.hardware.vibrator@1.1.vendor \
-    android.hardware.vibrator@1.2.vendor \
     android.hardware.vibrator@1.3.vendor \
     android.hardware.vr@1.0.vendor \
     android.hardware.weaver@1.0.vendor \
-    android.hardware.wifi.hostapd@1.0.vendor \
-    android.hardware.wifi.hostapd@1.1.vendor \
     android.hardware.wifi.hostapd@1.2.vendor \
     android.hardware.wifi.offload@1.0.vendor \
-    android.hardware.wifi.supplicant@1.0.vendor \
-    android.hardware.wifi.supplicant@1.1.vendor \
-    android.hardware.wifi.supplicant@1.2.vendor \
     android.hardware.wifi.supplicant@1.3.vendor \
-    android.hardware.wifi@1.0.vendor \
-    android.hardware.wifi@1.1.vendor \
-    android.hardware.wifi@1.2.vendor \
-    android.hardware.wifi@1.3.vendor \
     android.hardware.wifi@1.4.vendor \
     android.hidl.allocator@1.0.vendor \
     android.hidl.memory.block@1.0.vendor \
