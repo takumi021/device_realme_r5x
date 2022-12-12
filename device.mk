@@ -21,9 +21,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/wfd-commonsys \
     vendor/nxp/opensource/pn5xx
 
-# Vendor properties
--include $(LOCAL_PATH)/vendor_props.mk
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
