@@ -7,10 +7,6 @@
 # RealmeDirac
 $(call inherit-product, $(LOCAL_PATH)/app/RealmeDirac/dirac.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Soong namespaces
@@ -340,6 +336,18 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    TelephonyOverlay \
+    SettingsProviderOveray \
+    SettingsOverlay \
+    SystemUIOverlay \
+    WifiOverlay \
+    FrameworksOverlay \
+    TetheringCOverlay \
+    BluetoothOverlay
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.r5x-libperfmgr \
@@ -429,10 +437,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml
 
-# Tethering
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
-
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
@@ -468,7 +472,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwpa_client \
-    WifiOverlay \
     wpa_cli \
     wpa_supplicant \
     wpa_supplicant.conf \

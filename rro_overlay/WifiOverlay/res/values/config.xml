@@ -82,4 +82,8 @@
 
     <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
     <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
+
+    <!-- Do not translate. Default access point SSID used for tethering -->
+    <string name="wifi_tether_configure_ssid_default" translatable="false">Realme 5 Series</string>
+
 </resources>
