@@ -346,7 +346,8 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     FrameworksOverlay \
     TetheringCOverlay \
-    BluetoothOverlay
+    BluetoothOverlay \
+    ApertureOverlay
 
 # Power
 PRODUCT_PACKAGES += \
