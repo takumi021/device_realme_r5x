@@ -146,6 +146,20 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-1.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/firmware/19743/ilitek_fw_inx_signed.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/ilitek_fw_inx_signed.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/ilitek_fw_xlgg3_signed.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/ilitek_fw_xlgg3_signed.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/nt_hlt_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/nt_hlt_fw.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/nt_hlt_fw_mp.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/nt_hlt_fw_mp.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/nt_hlt_fw_signed.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/nt_hlt_fw_signed.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/nt_hltg_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/nt_hltg_fw.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/nt_hltg_fw_mp.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/nt_hltg_fw_mp.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/nt_hltg_fw_signed.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/nt_hltg_fw_signed.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/RA170A1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/RA170A1.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/RA170A1.conf:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/RA170A1.conf \
+    $(LOCAL_PATH)/configs/display/firmware/19743/RA170X1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/RA170X1.bin \
+    $(LOCAL_PATH)/configs/display/firmware/19743/RA170X1.conf:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/RA170X1.conf
+
 # DSP
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.dsp@1.0
