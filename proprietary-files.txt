@@ -26,14 +26,18 @@ vendor/lib/rfsa/adsp/libsns_device_mode_skel.so|733a5b8861bb6eb1285bb8982992531c
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so|c30bb30eecf968e02f72c055d3cc13a7f769644f
 vendor/lib/rfsa/adsp/libthread_blur_skel.so|b7f81ac2361e1a6292f5ab829940253fe418b72c
 
-# Alarm - from LA.UM.9.11.r1-03900-NICOBAR.0
--product/app/PowerOffAlarm/PowerOffAlarm.apk|bc906abd03e4a243201dde626b6580fd8a4f73ce
-system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar|6508f5708221399eb8bd9754dc49bad32a911e27
-vendor/bin/power_off_alarm|a225c7e197fd09bac849ae539c3caccbc4aa6ee3
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|d9f24646f315c7e8918966ca71011d83d39c82cf
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|384e626e393aa647bc63592fda36ab0475d27b5b
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|bfb13c00bef9355a0f0f54dc6773a4d14b7eaf95
+# Alarm
+-product/app/PowerOffAlarm/PowerOffAlarm.apk
+-product/framework/vendor.qti.hardware.alarm-V1.0-java.jar
+product/lib/vendor.qti.hardware.alarm@1.0.so
+product/lib64/vendor.qti.hardware.alarm@1.0.so
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+vendor/bin/power_off_alarm
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib/vendor.qti.hardware.alarm@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # ANT+
 -lib/libantradio.so
