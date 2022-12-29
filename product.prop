@@ -22,6 +22,9 @@ ro.surface_flinger.supports_background_blur=0
 # Dex
 ro.sys.fw.dex2oat_thread_count=8
 
+# IMS
+ro.telephony.block_binder_thread_on_incoming_calls=false
+
 # LMKD
 ro.config.low_ram=false
 ro.lmk.log_stats=true
