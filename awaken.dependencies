@@ -1,0 +1,14 @@
+[
+    {
+        "repository":   "kernel_realme_trinket",
+        "target_path":  "kernel/realme/r5x",
+        "branch":       "Chisato",
+        "remote":       "github.com/takumi021"
+    },
+    {
+        "repository":   "vendor_realme_r5x",
+        "target_path":  "vendor/realme/r5x",
+        "branch":       "thirteen",
+        "remote":       "github.com/takumi021"
+    }
+]
