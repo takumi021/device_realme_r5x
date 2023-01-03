@@ -164,6 +164,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/firmware/19743/RA170X1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/RA170X1.bin \
     $(LOCAL_PATH)/configs/display/firmware/19743/RA170X1.conf:$(TARGET_COPY_OUT_VENDOR)/firmware/tp/19743/RA170X1.conf
 
+# Display Device Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
+
 # DSP
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.dsp@1.0
