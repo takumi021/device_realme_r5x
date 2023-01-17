@@ -36,10 +36,6 @@ TARGET_VENDOR_PRODUCT_NAME := r5x
 TARGET_VENDOR_DEVICE_NAME := r5x
 
 # Build Info
-BUILD_FINGERPRINT := "google/redfin/redfin:13/TQ1A.221205.011/9244662:user/release-keys"
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="r5x" \
     PRIVATE_BUILD_DESC="trinket-user 10 QKQ1.200209.002 release-keys"
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
