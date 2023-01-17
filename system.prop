@@ -43,6 +43,7 @@ persist.data.df.dev_name=rmnet_usb0
 ro.vendor.qti.va_odm.support=1
 
 # Graphics
+ro.sf.lcd_density=320
 persist.hwc.enable_vds=1
 debug.cpurend.vsync=false
 
