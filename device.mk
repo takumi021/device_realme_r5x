@@ -214,6 +214,8 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
     android.hardware.gnss@2.1-service-qti \
     libbatching \
+    libloc_net_iface \
+    liblocdiagiface \
     libgeofencing \
     libgnss \
     apdr.conf \
