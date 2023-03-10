@@ -540,7 +540,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
+    libnl \
+    libqdMetaData \
+    libqdMetaData.system \
+    libqdMetaData.vendor \
     vendor.display.config@2.0
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 PRODUCT_PACKAGES += \
     android.frameworks.automotive.display@1.0.vendor \
