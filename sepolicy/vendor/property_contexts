@@ -74,10 +74,6 @@ persist.dbg.                                       u:object_r:vendor_ims_prop:s0
 persist.radio.                                       u:object_r:vendor_radio_prop:s0
 persist.vendor.delta.                                       u:object_r:vendor_time_prop:s0
 
-# Dirac
-persist.audio.dirac                           u:object_r:dirac_prop:s0
-audio.dirac.logging                           u:object_r:dirac_prop:s0
-
 ro.bluetooth.ftm_enabled             u:object_r:oppo_debug_prop:s0
 persist.env.fastdorm.enabled                  u:object_r:oppo_debug_prop:s0
 ro.data.large_tcp_window_size                  u:object_r:oppo_debug_prop:s0

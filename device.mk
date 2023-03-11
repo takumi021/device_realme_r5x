@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# RealmeDirac
-$(call inherit-product, $(LOCAL_PATH)/app/RealmeDirac/dirac.mk)
-
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Soong namespaces
