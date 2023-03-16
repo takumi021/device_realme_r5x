@@ -41,7 +41,7 @@ int main() {
     const std::string config_path =
             "/vendor/etc/" +
             android::base::GetProperty(kConfigProperty.data(), kConfigDefaultFileName.data());
-    LOG(INFO) << "r5x Power HAL AIDL Service with Extension is starting with config: "
+    LOG(INFO) << "bearmonets Power HAL AIDL Service with Extension is starting with config: "
               << config_path;
 
     // Parse config but do not start the looper
@@ -66,7 +66,7 @@ int main() {
     const std::string instance = std::string() + Power::descriptor + "/default";
     binder_status_t status = AServiceManager_addService(pw->asBinder().get(), instance.c_str());
     CHECK(status == STATUS_OK);
-    LOG(INFO) << "r5x Power HAL AIDL Service with Extension is started.";
+    LOG(INFO) << "bearmonets Power HAL AIDL Service with Extension is started.";
 
     if (::android::base::GetIntProperty("vendor.powerhal.adpf.rate", -1) != -1) {
         PowerHintMonitor::getInstance()->start();
@@ -82,6 +82,6 @@ int main() {
     ABinderProcess_joinThreadPool();
 
     // should not reach
-    LOG(ERROR) << "r5x Power HAL AIDL Service with Extension just died.";
+    LOG(ERROR) << "bearmonets Power HAL AIDL Service with Extension just died.";
     return EXIT_FAILURE;
 }

@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "SettingsProviderOverlayBearmonets",
+    theme: "SettingsProviderOverlayBearmonets",
+    sdk_version: "current",
+    vendor: true,
+}

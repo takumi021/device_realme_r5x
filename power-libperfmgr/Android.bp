@@ -18,7 +18,7 @@ package {
 }
 
 cc_library {
-    name: "libdisppower-r5x",
+    name: "libdisppower-bearmonets",
     proprietary: true,
     srcs: [
         "disp-power/InteractionHandler.cpp",
@@ -33,18 +33,18 @@ cc_library {
 }
 
 // Deprecated, do not use
-// Use r5x-power-ext for vendor extension
+// Use bearmonets-power-ext for vendor extension
 cc_library_headers {
-    name: "r5x_power_headers",
+    name: "bearmonets_power_headers",
     vendor: true,
     export_include_dirs: ["hidl"],
 }
 
 cc_binary {
-    name: "android.hardware.power-service.r5x-libperfmgr",
+    name: "android.hardware.power-service.bearmonets-libperfmgr",
     relative_install_path: "hw",
-    init_rc: ["aidl/android.hardware.power-service.r5x-libperfmgr.rc"],
-    vintf_fragments: ["aidl/android.hardware.power-service.r5x.xml"],
+    init_rc: ["aidl/android.hardware.power-service.bearmonets-libperfmgr.rc"],
+    vintf_fragments: ["aidl/android.hardware.power-service.bearmonets.xml"],
     vendor: true,
     shared_libs: [
         "android.hardware.power-V2-ndk",
@@ -53,7 +53,7 @@ cc_binary {
         "liblog",
         "libutils",
         "libbinder_ndk",
-        "libdisppower-r5x",
+        "libdisppower-bearmonets",
         "libperfmgr",
         "libprocessgroup",
         "pixel-power-ext-V1-ndk",

@@ -1,4 +1,4 @@
 hidl_package_root {
     name: "vendor.oppo",
-    path: "device/realme/r5x/interfaces/vendor",
+    path: "device/realme/bearmonets/interfaces/vendor",
 }

@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "TelephonyOverlayBearmonets",
+    theme: "TelephonyOverlayBearmonets",
+    sdk_version: "current",
+    vendor: true,
+}

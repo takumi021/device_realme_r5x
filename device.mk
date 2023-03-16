@@ -187,7 +187,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.r5x
+    android.hardware.biometrics.fingerprint@2.1-service.bearmonets
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -283,7 +283,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    init.r5x.rc \
+    init.bearmonets.rc \
     init.set_baseband.sh \
     ueventd.qcom.rc
 
@@ -299,7 +299,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.r5x
+    android.hardware.lights-service.bearmonets
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -370,20 +370,20 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlayR5x \
-    TelephonyOverlayR5x \
-    SettingsProviderOverayR5x \
-    SettingsOverlayR5x \
-    SystemUIOverlayR5x \
-    WifiOverlayR5x \
-    FrameworksOverlayR5x \
-    TetheringCOverlayR5x \
-    BluetoothOverlayR5x \
-    ApertureOverlayR5x
+    CarrierConfigOverlayBearmonets \
+    TelephonyOverlayBearmonets \
+    SettingsProviderOverayBearmonets \
+    SettingsOverlayBearmonets \
+    SystemUIOverlayBearmonets \
+    WifiOverlayBearmonets \
+    FrameworksOverlayBearmonets \
+    TetheringOverlayBearmonets \
+    BluetoothOverlayBearmonets \
+    ApertureOverlayBearmonets
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.r5x-libperfmgr \
+    android.hardware.power-service.bearmonets-libperfmgr \
     android.hardware.power.stats@1.0-service.pixel \
     libqti-perfd-client
 
@@ -628,4 +628,4 @@ PRODUCT_PACKAGES += \
     libtinyxml.vendor
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/realme/r5x/r5x-vendor.mk)
+$(call inherit-product, vendor/realme/bearmonets/bearmonets-vendor.mk)

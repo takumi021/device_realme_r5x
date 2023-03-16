@@ -1,0 +1,66 @@
+#
+# Custom bearmonets-specific init script
+#
+
+on early-init
+    write /dev/stune/schedtune.boost 50
+    write /dev/stune/schedtune.prefer_idle 1
+
+on boot
+    # GPU boost
+    chown system system /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+
+on property:sys.boot_completed=1
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.boost 0
+
+on property:vendor.post_boot.parsed=1
+    # Setup cpusets
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-2,5-7
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+
+    # Setup default schedTune value for foreground/top-app
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 1
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+
+    # Setup scheduler tunables
+    write /proc/sys/kernel/sched_upmigrate 85
+    write /proc/sys/kernel/sched_downmigrate 75
+    write /proc/sys/kernel/sched_autogroup_enabled 0
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
+    write /proc/sys/kernel/sched_child_runs_first 1
+
+    # Setup runtime blkio
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 200
+    write /dev/blkio/blkio.group_idle 2000
+    write /dev/blkio/background/blkio.group_idle 0
+
+    # Setup EAS tunables
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 4000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 16000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1612800
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 864000
+
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 4000
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 16000
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq 1804800
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 902400
+    
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
+    # Override readahead to 128KiB
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
+    write /sys/block/mmcblk1/queue/read_ahead_kb 128
+
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10

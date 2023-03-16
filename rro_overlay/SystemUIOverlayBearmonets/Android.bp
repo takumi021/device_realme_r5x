@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "SystemUIOverlayBearmonets",
+    theme: "SystemUIOverlayBearmonets",
+    sdk_version: "current",
+    vendor: true,
+}

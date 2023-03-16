@@ -5,10 +5,10 @@
 //
 
 cc_binary {
-    name: "android.hardware.lights-service.r5x",
+    name: "android.hardware.lights-service.bearmonets",
     relative_install_path: "hw",
-    init_rc: ["android.hardware.lights-r5x.rc"],
-    vintf_fragments: ["android.hardware.lights-r5x.xml"],
+    init_rc: ["android.hardware.lights-bearmonets.rc"],
+    vintf_fragments: ["android.hardware.lights-bearmonets.xml"],
     vendor: true,
     shared_libs: [
         "libbase",

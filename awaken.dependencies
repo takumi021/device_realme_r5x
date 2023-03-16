@@ -1,14 +1,14 @@
 [
     {
         "repository":   "kernel_realme_trinket",
-        "target_path":  "kernel/realme/r5x",
-        "branch":       "Chisato",
+        "target_path":  "kernel/realme/bearmonets",
+        "branch":       "inline",
         "remote":       "github.com/takumi021"
     },
     {
-        "repository":   "vendor_realme_r5x",
-        "target_path":  "vendor/realme/r5x",
+        "repository":   "vendor_realme_bearmonets",
+        "target_path":  "vendor/realme/bearmonets",
         "branch":       "thirteen",
-        "remote":       "github.com/takumi021"
+        "remote":       "github.com/realme-sm6125-devs"
     }
 ]

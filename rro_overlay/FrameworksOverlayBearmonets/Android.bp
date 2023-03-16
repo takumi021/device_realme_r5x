@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "FrameworksOverlayBearmonets",
+    theme: "FrameworksOverlayBearmonets",
+    sdk_version: "current",
+    vendor: true,
+}
