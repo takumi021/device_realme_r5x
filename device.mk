@@ -285,7 +285,12 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.bearmonets.rc \
     init.set_baseband.sh \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.dcvs.sh \
+    qca6234-service.sh \
+    init.crda.sh \
+    init.qcom.sdio.sh
+
 
 # IPv6
 PRODUCT_PACKAGES += \

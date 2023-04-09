@@ -6,6 +6,14 @@ on early-init
     write /dev/stune/schedtune.boost 50
     write /dev/stune/schedtune.prefer_idle 1
 
+on late-init
+    # Start services for bootanim
+    start surfaceflinger
+    start bootanim
+    start vendor.hwcomposer-2-4
+    start vendor.configstore-hal
+    start vendor.qti.hardware.display.allocator
+
 on boot
     # GPU boost
     chown system system /sys/class/kgsl/kgsl-3d0/min_pwrlevel
@@ -41,6 +49,14 @@ on property:vendor.post_boot.parsed=1
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
 
+    # Report max frequency to unity tasks.
+    write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+
+    # Kernelspace battery saver
+    chown system system /sys/module/battery_saver/parameters/enabled
+    chmod 0660 /sys/module/battery_saver/parameters/enabled
+
     # Setup EAS tunables
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 4000
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 16000
@@ -54,6 +70,9 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 1
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 902400
     
+    #Reinit lmkd to reconfigure lmkd properties
+    setprop lmkd.reinit 1
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
@@ -64,3 +83,49 @@ on property:vendor.post_boot.parsed=1
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
+
+    # fastprc_shell_3
+    mkdir /mnt/vendor/dsp 0770 root root
+    copy /vendor/dsp/cdsp/fastrpc_shell_3 /mnt/vendor/dsp/fastrpc_shell_3
+    chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
+    mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
+
+    # OTG
+    write /sys/class/power_supply/usb/otg_switch 1
+
+    # Charger hacks
+on charger
+    start vendor.health-hal-2-0
+    start charger
+    
+    # Set Qcom baseband
+on property:gsm.version.baseband=*
+    start set_baseband
+
+service set_baseband /product/bin/init.set_baseband.sh
+    class late_start
+    user system
+    group system
+    oneshot
+
+# NFC
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on property:ro.boot.product.hardware.sku=nfc_ese
+#vendor/etc/init/init.pn8x.nfc.rc
+    mkdir /data/vendor/nfc 0777 nfc nfc
+    mkdir /data/vendor/nfc/param 0777 nfc nfc
+    chmod 0666 /dev/pn553
+    chown nfc nfc /dev/pn553
+
+#vendor/etc/init/init.pn8x.se.rc
+    mkdir /data/vendor/secure_element 0777 secure_element secure_element
+    chmod 0666 /dev/p73
+    chown secure_element secure_element /dev/p73
+
+    start vendor.nfc_hal_service
