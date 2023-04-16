@@ -138,12 +138,6 @@ BOARD_HAS_QCA_FM_SOC := cherokee
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 LOC_HIDL_VERSION := 4.0
 
-# HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
-ODM_MANIFEST_SKUS += nfc_ese
-ODM_MANIFEST_NFC_ESE_FILES := $(DEVICE_PATH)/configs/manifests/manifest_nfc_ese.xml
-
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
@@ -218,6 +212,13 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 # Treble
 PRODUCT_VENDOR_MOVE_ENABLED := true
 BOARD_VNDK_VERSION := current
+
+# VINTF
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/framework_manifest.xml
+ODM_MANIFEST_SKUS += nfc_ese
+ODM_MANIFEST_NFC_ESE_FILES := $(DEVICE_PATH)/configs/manifests/manifest_nfc_ese.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
