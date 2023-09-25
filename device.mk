@@ -14,9 +14,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/wfd-commonsys \
     vendor/nxp/opensource/pn5xx
 
-# RealmeParts
-$(call inherit-product, $(DEVICE_PATH)/app/RealmeParts/parts.mk)
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
